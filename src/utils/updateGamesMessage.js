@@ -71,7 +71,6 @@ async function updateGamesMessage(client) {
     const messageIDs = messageObjs.keys()
     const message = messageObjs.first()
     const latestMessageID = messageIDs.next().value
-    // console.log('The latest Message ID:', latestMessageID, typeof latestMessageID)
 
     if (message) {
         const currentDateTimeStamp = new Date()
@@ -80,14 +79,6 @@ async function updateGamesMessage(client) {
             month: '2-digit',
             year: 'numeric'
         };
-        const currentHour = currentDateTimeStamp.getHours();
-        const currentMinute = currentDateTimeStamp.getMinutes();
-        const currentSecond = currentDateTimeStamp.getSeconds();
-
-        const currentTime = `${currentHour}:${currentMinute}:${currentSecond}`
-
-        console.log(`The current time: ${currentTime}`)
-
         const todayDate = currentDateTimeStamp.toLocaleString('en-US', options);
 
         // fetch league game schedule json from nba website
