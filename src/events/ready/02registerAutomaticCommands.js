@@ -8,9 +8,8 @@ module.exports = async (client) => {
         const interval = 120000
         updateGamesMessage(client)
         setInterval(() => updateGamesMessage(client), interval)
-        console.log('Automatic Functions set completed.')
-
-        sendDailyScoreMessage(client)
+        await sendDailyScoreMessage(client)
+        console.log('Finished registering automatic command functions')
 
     } catch (error) {
         console.log(`There was an error: ${error}`)

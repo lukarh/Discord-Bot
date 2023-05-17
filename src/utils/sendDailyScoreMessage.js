@@ -4,11 +4,14 @@ const updateGamesMessage = require('./updateGamesMessage')
 const teamEmojis = require(`../assets/teams/emojis.json`)
 
 async function sendDailyScoreMessage (client) {
-    const scheduleTime = '33 2 * * *'
+    const scheduleTime = '30 3 * * *'
+
+    console.log('----------------------------------------')
+    console.log('Setting up Scheduled Function...')
 
     cron.schedule(scheduleTime, () => {
 
-        console.log('triggered daily function')
+        console.log('Triggered Daily Function.')
         const channel = client.channels.cache.get(process.env.NBA_GAME_CHANNEL_ID)
 
         const currentDateStamp = new Date()
@@ -26,6 +29,9 @@ async function sendDailyScoreMessage (client) {
 
         channel.send({ embeds: [scoresEmbed] })
     })
+
+    console.log('Finished setting up Scheduled Function!!')
+    console.log('----------------------------------------')
 }
 
 module.exports = sendDailyScoreMessage;

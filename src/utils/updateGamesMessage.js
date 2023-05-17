@@ -7,6 +7,25 @@ const teamColors = require(`../assets/teams/colors.json`)
 const teamNicknames = require(`../assets/teams/nicknames.json`)
 const broadcastEmojis = require(`../assets/broadcast-emojis.json`)
 
+async function getCurrentTime() {
+    const currentDateTimeStamp = new Date()
+    let currentHour = currentDateTimeStamp.getHours();
+    const currentMinute = currentDateTimeStamp.getMinutes().toString().padStart(2, '0');
+
+    let period = 'AM';
+
+    if (currentHour === 0) {
+        currentHour = 12;
+    } else if (currentHour > 12) {
+        currentHour %= 12;
+        period = 'PM';
+    }
+
+    const currentTime = `${currentHour}:${currentMinute}${period}`
+
+    return currentTime
+}
+
 async function getBoxscoreJSON(gameID) {
     boxscoreJSON = await getJSON(`https://cdn.nba.com/static/json/liveData/boxscore/boxscore_${gameID}.json`)
     return boxscoreJSON
@@ -80,6 +99,7 @@ async function updateGamesMessage(client) {
             year: 'numeric'
         };
         const todayDate = currentDateTimeStamp.toLocaleString('en-US', options);
+        const currentTime = await getCurrentTime()
 
         // fetch league game schedule json from nba website
         scheduleJSON = await getJSON(`https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json`)
@@ -92,7 +112,7 @@ async function updateGamesMessage(client) {
         const oddsObjects = oddsJSON.games
 
         const scoresEmbed = new EmbedBuilder()
-            .setTitle(`${teamEmojis.NBA} Today's NBA Games - ${todayDate}`)
+            .setTitle(`${teamEmojis.NBA} Today's NBA Games - ${todayDate} | Last Update: ${currentTime} :arrows_counterclockwise:`)
             .setDescription('\n=====================================================================')
             .setFooter({ text: 'A (WIP) NBA Discord Bot developed by Lukar.', iconURL: 'https://www.freepnglogos.com/uploads/discord-logo-png/discord-icon-official-arma-koth-host-11.png' });
 
