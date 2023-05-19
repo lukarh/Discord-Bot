@@ -12,6 +12,13 @@
   -  https://cdn.nba.com/static/json/liveData/boxscore/boxscore_{gameID}.json
   -  https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json
 
+### File Structure
+- **src/assets/..:** Contains .json mappings of names to emojis, colors, ids, tricodes, etc.
+- **src/commands/{commandName}Folder/{commandName}.js:** Contains the logic for available bot commands that users can use and categorizes them
+- **src/events/..:** Contains the logic that allows for the bot to listen and respond to specific events that occur in the Discord Server with the bot
+- **src/handlers/..:** Contains the logic that handles all the events in the events folder
+- **src/utils/..** Contains the logic for various functions that need to be reused throughout the directory
+
 ## Available Local Scripts
 
 In the project directory, you can run:
