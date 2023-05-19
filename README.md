@@ -15,7 +15,14 @@ Runs the bot/file locally, but does not restart the bot automatically when any s
 
 Runs the bot locally and restarts the bot automatically when any saved file changes are made in the directory. This works because package.json has already defined "main": src/index.js
 
-## Current Features
+## Current Features on Version 1.0.1
 
 - Automatic Features
-  - test
+  - sendDailyScoreMessage.js: Sends a new message to the NBA Live Games Channel every 24 hours
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/5f154374-b45d-4f0e-980d-0bab01e88f1b)
+  - updateGameMessage.js: Updates the latest message in the NBA Live Games Channel with score updates every so often
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/7d580fc2-5492-4229-90e5-b061e5b49049)
+
+## Change Log
+1.0.0 - Initial Release of NBA Discord Bot. Bot can be ran locally when the user is online with their computer.
+1.0.1 - Simplified / Reorganized code.
