@@ -1,13 +1,14 @@
+// imports
 const updateGamesMessage = require('../../utils/updateGamesMessage')
 const sendDailyScoreMessage = require('../../utils/sendDailyScoreMessage')
 
 module.exports = async (client) => {
-
     try {
-        // non-commands
-        const interval = 120000
+        // register the automatic live game channel updates function
+        const interval = 45000
         updateGamesMessage(client)
         setInterval(() => updateGamesMessage(client), interval)
+        // register the automatic daily send new live game channel message function
         await sendDailyScoreMessage(client)
         console.log('Finished registering automatic command functions')
 

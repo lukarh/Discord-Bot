@@ -1,13 +1,12 @@
+// imports
 const { testServer } = require('../../../config.json');
 const areCommandsDifferent = require('../../utils/areCommandsDifferent')
 const getLocalCommands = require('../../utils/getLocalCommands');
 const getApplicationCommands = require('../../utils/getApplicationCommands');
 
-const updateGamesMessage = require('../../utils/updateGamesMessage')
-
 module.exports = async (client) => {
-
     try {
+        // fetch local and application commands
         const localCommands = getLocalCommands();
         const applicationCommands = await getApplicationCommands(client, testServer)
 
@@ -21,7 +20,7 @@ module.exports = async (client) => {
                 (cmd) => cmd.name === name
             )
 
-            // if an existing command exists with that name
+            // checks if a command exists with that name
             if (existingCommand) {
                 // delete and overwrite the existing command
                 if (localCommand.deleted) {
@@ -30,20 +29,22 @@ module.exports = async (client) => {
                     continue
                 }
 
+                // checks if the two commands are different, if so- overwrite it
                 if (areCommandsDifferent(existingCommand, localCommand)) {
                     await applicationCommands.edit(existingCommand.id, {
                         description,
                         options
                     })
-
                     console.log(`Edited command "${name}".`)
                 }
+
             } else {
+                // checks if command is set to be deleted, if so, do not create the new command
                 if (localCommand.deleted) {
                     console.log(`Skipping registering command "${name} as it's set to delete.`)
                     continue
                 }
-                // if command does not exist and not set to be deleted
+                // checks if command does not exist and if not, create new command
                 await applicationCommands.create({
                     name, 
                     description,

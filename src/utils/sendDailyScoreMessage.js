@@ -1,6 +1,5 @@
 const cron = require('node-cron')
 const { EmbedBuilder } = require('discord.js')
-const updateGamesMessage = require('./updateGamesMessage')
 const teamEmojis = require(`../assets/teams/emojis.json`)
 
 async function sendDailyScoreMessage (client) {
@@ -23,8 +22,10 @@ async function sendDailyScoreMessage (client) {
         const todayDate = currentDateStamp.toLocaleString('en-US', options);    
         
         const scoresEmbed = new EmbedBuilder()
-            .setTitle(`${teamEmojis.NBA} Today's NBA Games - ${todayDate}`)
-            .setDescription('\n=====================================================================')
+            .setTitle(`${teamEmojis.NBA} Live NBA Game Channel - ${todayDate}`)
+            .setDescription(`=====================================================================
+                             Fetching Data...
+                             =====================================================================`)
             .setFooter({ text: 'A (WIP) NBA Discord Bot developed by Lukar.', iconURL: 'https://www.freepnglogos.com/uploads/discord-logo-png/discord-icon-official-arma-koth-host-11.png' });
 
         channel.send({ embeds: [scoresEmbed] })
