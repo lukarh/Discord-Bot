@@ -26,4 +26,13 @@ Runs the bot locally and restarts the bot automatically when any saved file chan
 ## Change Log
 1.0.0 - Initial Release of NBA Discord Bot. Bot can be ran locally when the user is online with their computer.
 
-1.0.1 - Simplified / Reorganized code.
+1.0.1 - Simplified / Reorganized code in utils.
+
+## Not Included 
+- .env
+  - TOKEN (Access to Bot)
+  - GUILD_ID (Server ID)
+  - CLIENT_ID (
+  - NBA_GAME_CHANNEL_ID (Channel ID to update Game Scores Channel with)
+ 
+- config.json: 
