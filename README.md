@@ -1,7 +1,7 @@
 
 # NBA Discord Bot
 
-[The NBA Discord Bot] is a [Discord](https://discord.com/) [Bot](https://discord.com/developers/docs/intro) developed by Lukar as a fun little project for personal use on their own Discord Server and learning purposes. A much more fleshed out version of the NBA Discord Bot can be found [here](https://github.com/NBABot-Development-Team/NBABot). File Structure is inspired by [https://www.youtube.com/watch?v=JEEcbVjLyr0) and the assets directory was inspired by the [NBA Discord Bot](https://github.com/NBABot-Development-Team/NBABot). 
+[The NBA Discord Bot](https://github.com/lukarh/NBA-Discord-Bot) is a [Discord](https://discord.com/) [Bot](https://discord.com/developers/docs/intro) developed by Lukar as a fun little project for personal use on their own Discord Server and learning purposes. A much more fleshed out version of the NBA Discord Bot can be found [here](https://github.com/NBABot-Development-Team/NBABot). File Structure is inspired by [https://www.youtube.com/watch?v=JEEcbVjLyr0) and the assets directory was inspired by the [NBA Discord Bot](https://github.com/NBABot-Development-Team/NBABot). 
 
 ## Available Local Scripts
 
