@@ -7,8 +7,8 @@
 - Coding Language: JavaScript
 - Code Editor: [Visual Studio Code (VSCode)](https://code.visualstudio.com/)
 - Relies on NBA Live API Endpoints:  
-  -  https://cdn.nba.com/static/json/liveData/odds/odds_todaysGames.json
   -  https://cdn.nba.com/static/json/staticData/scheduleLeagueV2_1.json
+  -  https://cdn.nba.com/static/json/liveData/odds/odds_todaysGames.json
   -  https://cdn.nba.com/static/json/liveData/boxscore/boxscore_{gameID}.json
   -  https://cdn.nba.com/static/json/liveData/scoreboard/todaysScoreboard_00.json
 
