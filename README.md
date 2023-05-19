@@ -19,18 +19,6 @@
 - **src/handlers/..:** Contains the logic that handles all the events in the events folder
 - **src/utils/..** Contains the logic for various functions that need to be reused throughout the directory
 
-## Available Local Scripts
-
-In the project directory, you can run:
-
-### `node src/index.js`
-
-Runs the bot/file locally, but does not restart the bot automatically when any saved file changes are made in the directory
-
-### `nodemon`
-
-Runs the bot locally and restarts the bot automatically when any saved file changes are made in the directory. This works because package.json has already defined "main": src/index.js
-
 ## Current Features on Version 1.0.1
 
 - Automatic Features
@@ -45,6 +33,18 @@ Runs the bot locally and restarts the bot automatically when any saved file chan
 1.0.0 - Initial Release of NBA Discord Bot. Bot can be ran locally when the user is online with their computer.
 
 1.0.1 - Simplified / Reorganized code in utils.
+
+## Available Local Scripts
+
+In the project directory, you can run:
+
+### `node src/index.js`
+
+Runs the bot/file locally, but does not restart the bot automatically when any saved file changes are made in the directory
+
+### `nodemon`
+
+Runs the bot locally and restarts the bot automatically when any saved file changes are made in the directory. This works because package.json has already defined "main": src/index.js
 
 ## Not Included 
 - .env
