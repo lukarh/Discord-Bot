@@ -41,7 +41,7 @@ Runs the bot locally and restarts the bot automatically when any saved file chan
 - .env
   - TOKEN (Access to Bot)
   - GUILD_ID (Server ID)
-  - CLIENT_ID (
+  - CLIENT_ID 
   - NBA_GAME_CHANNEL_ID (Channel ID to update Game Scores Channel with)
  
 - config.json: 
