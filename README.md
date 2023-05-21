@@ -22,9 +22,9 @@
 ## Current Features on Version 1.0.1
 
 - Automatic Features
-  - sendDailyScoreMessage.js: Sends a new message to the NBA Live Games Channel every 24 hours
+  - sendDailyScoreMessage.js: Sends a msg for every game to the NBA Live Games Channel every 24 hours
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/5f154374-b45d-4f0e-980d-0bab01e88f1b)
-  - updateGameMessage.js: Updates the latest message in the NBA Live Games Channel with scores every minute
+  - updateGameMessage.js: Updates the NBA Live Games Channel with scores every minute
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/7d580fc2-5492-4229-90e5-b061e5b49049)
 - User Commands
   - To be developed (TBD)...   
