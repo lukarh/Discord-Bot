@@ -27,7 +27,7 @@
   - updateGameMessage.js: Updates the NBA Live Games Channel with scores every minute
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/29d7f0a0-b6fb-4050-8a0b-79cbb84aa810)
 - User Commands
-  - To be developed (TBD)...   
+  - /available-game-bets  
 
 ## Change Log
 1.0.0 - Initial Release of NBA Discord Bot. Bot can be ran locally when the user is online with their computer.
