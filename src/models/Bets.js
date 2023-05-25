@@ -23,6 +23,10 @@ const userSchema = new Schema({
         type: Number,
         required: true,
         default: 0,
+    },
+    betTeam: {
+        type: String,
+        required: true,
     }
 })
 

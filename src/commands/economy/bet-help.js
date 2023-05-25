@@ -54,7 +54,7 @@ module.exports = {
                 },
                 {
                     name: '/claim-bet',
-                    value: 'Cash out on a bet you made for a game. [N/A yet]',
+                    value: 'Cash out on a bet you made for a game.',
                     inline: true,
                 },
                 {

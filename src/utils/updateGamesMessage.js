@@ -14,8 +14,8 @@ async function updateGamesMessage(client) {
 
     // fetch currentDateTime
     const results = await getCurrentDateTime()
-    const todaysDate = results.todaysDate
-    // const todaysDate = "05/23/2023"
+    // const todaysDate = results.todaysDate
+    const todaysDate = "05/24/2023"
     const currentTime = results.currentTime
 
     // create new embed for scores

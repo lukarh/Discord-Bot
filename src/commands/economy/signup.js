@@ -40,8 +40,9 @@ module.exports = {
                 newUser = new User({
                     userId: interaction.member.id,
                     guildId: interaction.guild.id,
-                    balance: 200,
+                    balance: 250,
                     signupDate: todaysDate,
+                    dailyDate: todaysDate,
                     wins: 0,
                     loss: 0,
                     careerBuyIn: 0,
@@ -50,7 +51,7 @@ module.exports = {
                 
                 await newUser.save()
 
-                interaction.editReply(`You are now eligible to place bets on NBA games! Your current balance is **${newUser.balance.toFixed(2)}**. Type /bet-help for more info.`)
+                interaction.editReply(`You are now eligible to place bets on NBA games! Your current balance is **$${newUser.balance.toFixed(2)}**. Type /bet-help for more info.`)
                 return
             }
 

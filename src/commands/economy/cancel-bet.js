@@ -10,7 +10,7 @@ module.exports = {
     options: [
         {
             name: 'game-id',
-            description: 'See nba-live-games text channel for the Game ID of the game you want to bet on.',
+            description: 'See nba-live-games text channel for the Game ID or type /available-game-bets.',
             type: ApplicationCommandOptionType.Number, 
             required: true,
         }
@@ -38,7 +38,8 @@ module.exports = {
             // fetch league schedule and current live games to check for current game status
             const liveGameObjects = await getScoreboard(rawJSON=false)
             const liveGameInfo = liveGameObjects.find(liveGameInfo => liveGameInfo.gameId === gameID)
-            const gameStatus = (liveGameInfo !== undefined) ? liveGameInfo.gameStatus : await getGameDetails(gameID).gameStatus
+            const gameDetails = await getGameDetails(gameID)
+            const gameStatus = (liveGameObjects.length !== 0) ? liveGameInfo.gameStatus : gameDetails.gameStatus
 
             if (gameStatus === 2) {
                 interaction.editReply(`This game is currently **in progress**. You **cannot** edit a bet for a game that is live.`)

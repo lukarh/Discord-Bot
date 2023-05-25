@@ -20,6 +20,26 @@ const userSchema = new Schema({
     lastDaily: {
         type: Date,
         required: false,
+    },
+    wins: {
+        type: Number,
+        default: 0,
+        required: false,
+    }, 
+    loss: {
+        type: Number,
+        default: 0,
+        required: false,
+    },
+    careerBuyIn: {
+        type: Number,
+        default: 0,
+        required: false,
+    },
+    careerPayout: {
+        type: Number,
+        default: 0,
+        required: false,
     }
 })
 

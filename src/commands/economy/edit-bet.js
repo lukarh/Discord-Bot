@@ -16,7 +16,7 @@ module.exports = {
         },
         {
             name: 'game-id',
-            description: 'See nba-live-games text channel for the Game ID of the game you want to bet on.',
+            description: 'See nba-live-games text channel for the Game ID or type /available-game-bets.',
             type: ApplicationCommandOptionType.Number, 
             required: true,
         }
@@ -27,9 +27,19 @@ module.exports = {
     **/
     callback: async (client, interaction) => {
         const gameID = interaction.options.get('game-id').value
+        const newBetAmount = interaction.options.get('new-amount').value
 
         // defer initial reply of interaction - allows the bot to have time to generate a response based on inputs
         await interaction.deferReply()
+
+        // Validate if the amount is a number and has two or fewer decimal places
+        if (!/^\d+(\.\d{1,2})?$/.test(newBetAmount)) {
+            interaction.editReply({
+                content: `Please enter a valid money bet with two or fewer decimal places. You inputted the following: **$${newBetAmount}**`,
+                ephemeral: true
+            })
+            return
+        }
 
         // search Bets database if the user has placed a bet for that game
         const betQuery = {
@@ -44,7 +54,8 @@ module.exports = {
             // fetch league schedule and current live games to check for current game status
             const liveGameObjects = await getScoreboard(rawJSON=false)
             const liveGameInfo = liveGameObjects.find(liveGameInfo => liveGameInfo.gameId === gameID)
-            const gameStatus = (liveGameInfo !== undefined) ? liveGameInfo.gameStatus : await getGameDetails(gameID).gameStatus
+            const gameDetails = await getGameDetails(gameID)
+            const gameStatus = (liveGameObjects.length !== 0) ? liveGameInfo.gameStatus : gameDetails.gameStatus
 
             if (gameStatus === 2) {
                 interaction.editReply(`This game is currently **in progress**. You **cannot** edit a bet for a game that is live.`)
@@ -55,8 +66,6 @@ module.exports = {
             } else {
                 // fetch the amount to giveback to the user
                 const prevBetAmount = bet.betAmount
-
-                const newBetAmount = interaction.options.get('new-amount').value
 
                 // checks if the new amount is not less than 0
                 if ((newBetAmount < 1.00)) {
