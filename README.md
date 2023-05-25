@@ -63,6 +63,8 @@
 
 1.0.1 - Simplified / Reorganized code in utils.
 
+1.1.0 - Introduced new betting feature, claim-bet feature yet to be implemented.
+
 ## Available Local Scripts
 
 In the project directory, you can run:
