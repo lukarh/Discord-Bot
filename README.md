@@ -27,7 +27,14 @@
   - updateGameMessage.js: Updates the NBA Live Games Channel with scores every minute
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/29d7f0a0-b6fb-4050-8a0b-79cbb84aa810)
 - User Commands
-  - /available-game-bets  
+  - **/available-game-bets**: Shows the user a list of the betting status for available NBA games.
+  - **/bet-east** [team-name] [amount] [game-id]: Allows the user to bet on an Eastern Conference Team to win a specific game.
+  - **/bet-west** [team-name] [amount] [game-id]: Allows the user to bet on a Western Conference Team to win a specific game.
+  - **/balance** [optional-user]: Checks the balance of a current user or themselves
+  - **/cancel-bet** [game-id]: Cancels a bet a user has made for a specific game if permitted.
+  - **/daily**: Allows the user to collect free daily money.
+  - **/edit-bet** [amount] [game-id]: Edits a bet a user has made for a specific game if it permits.
+  - **/signup**: Allows the user sign-up to create a profile to make virtual bets on games.
 
 ## Change Log
 1.0.0 - Initial Release of NBA Discord Bot. Bot can be ran locally when the user is online with their computer.
