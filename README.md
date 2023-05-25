@@ -23,29 +23,39 @@
 
 - Automatic Features
   - sendDailyScoreMessage.js: Sends a msg for every game to the NBA Live Games Channel every 24 hours
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/857d7334-529c-49b5-8727-f685fb727fed)
   - updateGameMessage.js: Updates the NBA Live Games Channel with scores every minute
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/29d7f0a0-b6fb-4050-8a0b-79cbb84aa810)
 - User Commands
   - **/available-game-bets**: Shows the user a list of the betting status for available NBA games.
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/5d8b770d-be02-446e-aa61-7549216b35b5)
   - **/bet-east** [team-name] [amount] [game-id]: Allows the user to bet on an Eastern Conference Team to win a specific game.
   - **/bet-west** [team-name] [amount] [game-id]: Allows the user to bet on a Western Conference Team to win a specific game.
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/d3dc3d89-7b32-4c56-8b1b-ae91f0c2d434)
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/813920b0-1596-4562-a05b-2bdaf8e2eab7)
   - **/balance** [optional-user]: Checks the balance of a current user or themselves
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/3344966e-e3af-4f32-aa15-ce2efac163af)
   - **/cancel-bet** [game-id]: Cancels a bet a user has made for a specific game if permitted.
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/47c87879-8e50-40aa-8909-10958662669d)
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/8a239e51-093d-4d16-93d6-abe7510da8c7)
   - **/daily**: Allows the user to collect free daily money.
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/e178c21c-bc9d-49cf-874c-8246776f3a88)
   - **/edit-bet** [amount] [game-id]: Edits a bet a user has made for a specific game if it permits.
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/9a0086f3-768a-491c-b264-cb4463ab967a)
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/683788a0-d1af-451e-b0fe-b3addecc55b3)
   - **/signup**: Allows the user sign-up to create a profile to make virtual bets on games.
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/1681a79d-89b2-4517-8d34-eda3cec33b6f)
 
 ## Change Log
