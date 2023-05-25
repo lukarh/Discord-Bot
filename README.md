@@ -82,4 +82,4 @@ Runs the bot locally and restarts the bot automatically when any saved file chan
   - CLIENT_ID 
   - NBA_GAME_CHANNEL_ID (Channel ID to update Game Scores Channel with)
  
-- config.json: 
+- config.json
