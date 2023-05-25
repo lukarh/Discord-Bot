@@ -1,34 +1,60 @@
+// imports
 const cron = require('node-cron')
-const { EmbedBuilder } = require('discord.js')
-const teamEmojis = require(`../assets/teams/emojis.json`)
+
+const { getCurrentDateTime } = require(`./getCurrentDateTime`)
+const { getTodaysGames, getScoreboard, getTodaysOdds } = require('./getLiveNBAData')
+const { createGameScoreEmbed, addGameColorToEmbed, addGameDetailsToEmbed, addNoGamesDetailToEmbed } = require('./addEmbedDetails')
 
 async function sendDailyScoreMessage (client) {
+    // declare a scheduled time for the bot to update the channel at
     const scheduleTime = '30 3 * * *'
 
     console.log('----------------------------------------')
     console.log('Setting up Scheduled Function...')
 
-    cron.schedule(scheduleTime, () => {
+    cron.schedule(scheduleTime, async() => {
 
         console.log('Triggered Daily Function.')
         const channel = client.channels.cache.get(process.env.NBA_GAME_CHANNEL_ID)
 
-        const currentDateStamp = new Date()
-        const options = { 
-            day: '2-digit',
-            month: '2-digit',
-            year: 'numeric'
-        };
-        const todayDate = currentDateStamp.toLocaleString('en-US', options);    
-        
-        const scoresEmbed = new EmbedBuilder()
-            .setTitle(`${teamEmojis.NBA} Live NBA Game Channel - ${todayDate}`)
-            .setDescription(`=====================================================================
-                             Fetching Data...
-                             =====================================================================`)
-            .setFooter({ text: 'A (WIP) NBA Discord Bot developed by Lukar.', iconURL: 'https://www.freepnglogos.com/uploads/discord-logo-png/discord-icon-official-arma-koth-host-11.png' });
+        const results = await getCurrentDateTime()
+        const todaysDate = results.todaysDate
+        const currentTime = results.currentTime
 
-        channel.send({ embeds: [scoresEmbed] })
+        const todaysGames = await getTodaysGames(todaysDate)
+
+        let gameCount = 1;
+
+        if (todaysGames !== undefined) {
+
+            const liveGameObjects = await getScoreboard(rawJSON=false)
+            const oddsObjects = await getTodaysOdds(rawJSON=false)
+            const todaysGames = await getTodaysGames(todaysDate)
+
+            for (const gameInfo of todaysGames) {
+                
+                const scoresEmbed = await createGameScoreEmbed(todaysDate, currentTime)
+                
+                const gameID = gameInfo.gameId
+                const liveGameInfo = liveGameObjects.find(liveGameInfo => liveGameInfo.gameId === gameID)
+                const gameOddsInfo = oddsObjects.find(gameOddsInfo => gameOddsInfo.gameId === gameID)
+                
+                let gameStatus = gameInfo.gameStatus // 1 - hasn't started, 2 - live, 3 - final
+                gameStatus = (liveGameInfo !== undefined) ? liveGameInfo.gameStatus : gameStatus
+                
+                await addGameColorToEmbed(gameInfo, scoresEmbed)
+                await addGameDetailsToEmbed(gameStatus, gameInfo, liveGameInfo, gameID, gameOddsInfo, scoresEmbed)
+                
+                channel.send({ content: `${todaysDate} - Game #${gameCount} | Game ID: [${gameID}]`, embeds: [scoresEmbed] }) 
+                
+                gameCount++
+            }
+        } else {
+            const scoresEmbed = await createGameScoreEmbed(todaysDate, currentTime)
+            await addNoGamesDetailToEmbed(scoresEmbed)
+
+            channel.send({ content: `${todaysDate} - No Games`, embeds: [scoresEmbed] })
+        }
     })
 
     console.log('Finished setting up Scheduled Function!!')

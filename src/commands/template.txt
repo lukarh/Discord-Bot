@@ -1,0 +1,20 @@
+const { Client, Interaction, ApplicationCommandOptionType } = require('discord.js')
+
+module.exports = {
+    name: 'type-name-here',
+    description: "type-description-here",
+    options: [
+        {
+            name: 'example-name',
+            description: 'example-description',
+            type: ApplicationCommandOptionType.User,
+        }
+    ],
+    /** 
+    * @param {Client} client 
+    * @param {Interaction} interaction
+    **/
+    callback: async (client, interaction) => {
+        // write command logic here...
+    },
+}

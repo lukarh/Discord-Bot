@@ -1,0 +1,36 @@
+const { Client, Interaction, ApplicationCommandOptionType } = require('discord.js')
+
+module.exports = {
+    /** 
+    * 
+    * @param {Client} client 
+    * @param {Interaction} interaction
+    **/
+    callback: async (client, interaction) => {
+        if (!interaction.inGuild()) {
+            interaction.reply({
+                content: 'You can only run this command inside a server.',
+                ephemeral: true,
+            })
+             
+            return
+        }
+
+        try {
+
+        } catch (error) {
+            console.log(`Error with signing up. Please try again later. Error: ${error}`)
+        }
+
+    },
+
+    name: 'game-summary',
+    description: "Sign up to bet on NBA games!",
+    options: [
+        {
+            name: 'user',
+            description: 'The user whose balance you want to get.',
+            type: ApplicationCommandOptionType.User,
+        }
+    ]
+}

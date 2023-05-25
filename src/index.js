@@ -1,35 +1,48 @@
 // Libraries
-require('dotenv').config()
+require('dotenv').config();
+const { Client, IntentsBitField, ActivityType } = require('discord.js'); // destructuring: importing a set amount of things from something, in this case a package
+const mongoose = require('mongoose');
 const eventHandler = require('./handlers/eventHandler');
-const { Client, IntentsBitField, ActivityType } = require('discord.js') // destructuring: importing a set amount of things from something, in this case a package
 
 const client = new Client({
-    intents: [ // intents are a set of permissions the bots can use in order to get access to a set of events
-        IntentsBitField.Flags.Guilds, 
+    // intents are a set of permissions the bots can use in order to get access to a set of events
+    intents: [
+        IntentsBitField.Flags.Guilds,
         IntentsBitField.Flags.GuildMembers,
         IntentsBitField.Flags.GuildMessages,
         IntentsBitField.Flags.MessageContent,
-    ]
-})
+    ],
+});
 
-let status = [
-    {
-        name: 'Live NBA Games',
-        type: ActivityType.Watching
-    },
-    {
-        name: 'for New NBA Games',
-        type: ActivityType.Watching
-    },
-    {
-        name: 'nothing today :(',
-        type: ActivityType.Watching
-    }
-]
+(async () => {
+    try {
+        mongoose.set('strictQuery', false);
+        await mongoose.connect(process.env.MONGODB_URI, { keepAlive: true });
+        console.log('Connected to DB.');
 
-eventHandler(client);
+        eventHandler(client);
+  } catch (error) {
+        console.log(`Error: ${error}`);
+  }
+})();
 
 client.login(process.env.TOKEN);
+
+
+// let status = [
+//     {
+//         name: 'Live NBA Games',
+//         type: ActivityType.Watching
+//     },
+//     {
+//         name: 'for New NBA Games',
+//         type: ActivityType.Watching
+//     },
+//     {
+//         name: 'nothing today :(',
+//         type: ActivityType.Watching
+//     }
+// ]
 
 // client.on('ready', (c) => {
 //     console.log(`${c.user.tag} is online.`)

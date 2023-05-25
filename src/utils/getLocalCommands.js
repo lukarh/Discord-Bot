@@ -23,7 +23,6 @@ module.exports = (exceptions = []) => {
             if (exceptions.includes(commandObject.name)) {
                 continue
             }
-
             // add to list of localCommands
             localCommands.push(commandObject)
         }
