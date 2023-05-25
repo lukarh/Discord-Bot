@@ -76,6 +76,8 @@
 
 1.1.0 - Introduced new betting feature, claim-bet feature yet to be implemented.
 
+1.1.1 - Implemented a way for the user to claim their payouts on bets. Fixed bugs with bet inputs and gameStatus not registering correctly.
+
 ## Available Local Scripts
 
 In the project directory, you can run:
