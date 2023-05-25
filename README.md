@@ -39,6 +39,7 @@
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/813920b0-1596-4562-a05b-2bdaf8e2eab7)
   - **/bet-help**: Shows a list of available game bet commands
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/f77fbc22-5eab-4d0e-a7d8-26cc2da75a70)
 
   - **/balance** [optional-user]: Checks the balance of a current user or themselves
