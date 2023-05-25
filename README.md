@@ -34,11 +34,13 @@
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/d3dc3d89-7b32-4c56-8b1b-ae91f0c2d434)
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/813920b0-1596-4562-a05b-2bdaf8e2eab7)
   - **/balance** [optional-user]: Checks the balance of a current user or themselves
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/3344966e-e3af-4f32-aa15-ce2efac163af)
   - **/cancel-bet** [game-id]: Cancels a bet a user has made for a specific game if permitted.
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/47c87879-8e50-40aa-8909-10958662669d)
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/8a239e51-093d-4d16-93d6-abe7510da8c7)
   - **/daily**: Allows the user to collect free daily money.
+
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/e178c21c-bc9d-49cf-874c-8246776f3a88)
   - **/edit-bet** [amount] [game-id]: Edits a bet a user has made for a specific game if it permits.
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/9a0086f3-768a-491c-b264-cb4463ab967a)
