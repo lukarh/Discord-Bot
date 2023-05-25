@@ -10,6 +10,7 @@ module.exports = {
     * @param {Interaction} interaction
     **/
     callback: async (client, interaction) => {
+        // check if command is ran in a server
         if (!interaction.inGuild()) {
             interaction.reply({
                 content: 'You can only run this command inside a server.',
@@ -20,9 +21,9 @@ module.exports = {
         }
 
         try {
-
             await interaction.deferReply()
 
+            // get currentDate
             const currentDate = new Date()
             const todaysDate = currentDate.toDateString()
 
@@ -33,9 +34,11 @@ module.exports = {
             
             let user = await User.findOne(query) 
 
+            // check if user already exists in database
             if (user) {
                 interaction.editReply(`You have already signed up to place bets!`)
                 return
+            // else, create a new user in the database
             } else {
                 newUser = new User({
                     userId: interaction.member.id,
@@ -49,6 +52,7 @@ module.exports = {
                     careerPayout: 0,
                 })
                 
+                // save user to database
                 await newUser.save()
 
                 interaction.editReply(`You are now eligible to place bets on NBA games! Your current balance is **$${newUser.balance.toFixed(2)}**. Type /bet-help for more info.`)
