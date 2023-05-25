@@ -50,6 +50,13 @@
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/47c87879-8e50-40aa-8909-10958662669d)
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/8a239e51-093d-4d16-93d6-abe7510da8c7)
+
+  - **/claim-bet** [game-id]: Allows for the user to cashout on a bet they made if the game has ended.
+
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/2152b383-7a9a-408d-ad18-766a5aa9d514)
+
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/2289516f-1143-4eef-ac0c-e24935d9c626)
+
   - **/daily**: Allows the user to collect free daily money.
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/e178c21c-bc9d-49cf-874c-8246776f3a88)
