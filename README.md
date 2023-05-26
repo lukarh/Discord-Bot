@@ -87,6 +87,11 @@
 
 1.1.1 - Implemented a way for the user to claim their payouts on bets. Fixed bugs with bet inputs and gameStatus not registering correctly.
 
+1.2.0 - Introduced new commands: /process-bets, /current-bets, as well as few other admin commands in case bugs arise that messes up command functionalities. Also fixed bugs related to gameStatus not being read correctly which broke a ton of commands
+
+## Bug List
+- To Fix: updateGameMessage, needs to handle multiple message for multiple games
+
 ## Available Local Scripts
 
 In the project directory, you can run:
