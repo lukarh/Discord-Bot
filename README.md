@@ -32,19 +32,26 @@
   - **/available-game-bets**: Shows the user a list of the betting status for available NBA games.
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/5d8b770d-be02-446e-aa61-7549216b35b5)
+
+  - **/balance** [optional-user]: Checks the balance of a current user or themselves
+
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/3344966e-e3af-4f32-aa15-ce2efac163af)
+
   - **/bet-east** [team-name] [amount] [game-id]: Allows the user to bet on an Eastern Conference Team to win a specific game.
   - **/bet-west** [team-name] [amount] [game-id]: Allows the user to bet on a Western Conference Team to win a specific game.
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/d3dc3d89-7b32-4c56-8b1b-ae91f0c2d434)
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/813920b0-1596-4562-a05b-2bdaf8e2eab7)
+
   - **/bet-help**: Shows a list of available game bet commands
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/f77fbc22-5eab-4d0e-a7d8-26cc2da75a70)
 
-  - **/balance** [optional-user]: Checks the balance of a current user or themselves
+  - **/bets-leaderboard**: Shows the bets leaderboard and allows the user to see who has won the most bets and money on the server!
+  
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/4c604a86-fde9-41a1-b1d5-e81bb4a936e5)
 
-![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/3344966e-e3af-4f32-aa15-ce2efac163af)
   - **/cancel-bet** [game-id]: Cancels a bet a user has made for a specific game if permitted.
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/47c87879-8e50-40aa-8909-10958662669d)
@@ -59,7 +66,7 @@
 
   - **/current-bets**: Allows the user to see all the current bets made by all users so far.
  
-![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/8923669e-6af9-4131-bd75-2c8ffb241d2e)
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/48975964-aee4-4e79-b4df-b382fe67ec52)
 
   - **/daily**: Allows the user to collect free daily money.
 
@@ -72,7 +79,7 @@
 
   - **/process-bets**: [Admin-Only] Allows the bot to perform the /claim-bet functionality for all current bets in the database.
 
-![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/5cee1d83-56fe-4548-8699-699cbdc98f37)
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/f2e94011-c1a7-46a3-a498-d2243704caab)
 
   - **/signup**: Allows the user sign-up to create a profile to make virtual bets on games.
 
@@ -88,6 +95,8 @@
 1.1.1 - Implemented a way for the user to claim their payouts on bets. Fixed bugs with bet inputs and gameStatus not registering correctly.
 
 1.2.0 - Introduced new commands: /process-bets, /current-bets, as well as few other admin commands in case bugs arise that messes up command functionalities. Also fixed bugs related to gameStatus not being read correctly which broke a ton of commands
+
+1.2.1 - Added /bets-leaderboard functionality and activity status to bot, cleaned up a bit of code too.
 
 ## Bug List
 - To Fix: updateGameMessage, needs to handle multiple message for multiple games
