@@ -50,7 +50,7 @@
 
   - **/bets-leaderboard**: Shows the bets leaderboard and allows the user to see who has won the most bets and money on the server!
   
-![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/4c604a86-fde9-41a1-b1d5-e81bb4a936e5)
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/fbd9d1d4-7ab6-43d8-bb71-73754a7c0b31)
 
   - **/cancel-bet** [game-id]: Cancels a bet a user has made for a specific game if permitted.
 
