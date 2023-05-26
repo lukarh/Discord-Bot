@@ -72,7 +72,7 @@
 
   - **/process-bets**: [Admin-Only] Allows the bot to perform the /claim-bet functionality for all current bets in the database.
 
-![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/5cee1d83-56fe-4548-8699-699cbdc98f37)
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/d452c312-99fa-42cc-9ce5-6c59935c5d70)
 
   - **/signup**: Allows the user sign-up to create a profile to make virtual bets on games.
 
