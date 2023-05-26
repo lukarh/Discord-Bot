@@ -1,6 +1,6 @@
 // Libraries
 require('dotenv').config();
-const { Client, IntentsBitField, ActivityType } = require('discord.js'); // destructuring: importing a set amount of things from something, in this case a package
+const { Client, IntentsBitField } = require('discord.js'); // destructuring: importing a set amount of things from something, in this case a package
 const mongoose = require('mongoose');
 const eventHandler = require('./handlers/eventHandler');
 
@@ -47,10 +47,10 @@ client.login(process.env.TOKEN);
 // client.on('ready', (c) => {
 //     console.log(`${c.user.tag} is online.`)
 
-//     // client.user.setActivity({
-//     //     name: 'NBA Games',
-//     //     type: ActivityType.Watching
-//     // })
+    // client.user.setActivity({
+    //     name: 'NBA Games',
+    //     type: ActivityType.Watching
+    // })
 
 //     setInterval(() => {
 //         let random = Math.floor(Math.random() * status.length)

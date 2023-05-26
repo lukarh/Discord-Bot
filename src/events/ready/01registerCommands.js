@@ -55,7 +55,7 @@ module.exports = async (client) => {
             }
         }
 
-        console.log('Finished registering commands.')
+        console.log('1) Finished registering commands!')
 
     } catch (error) {
         console.log(`There was an error: ${error}`)

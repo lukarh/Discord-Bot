@@ -10,7 +10,7 @@ module.exports = async (client) => {
         setInterval(() => updateGamesMessage(client), interval)
         // register the automatic daily send new live game channel message function
         await sendDailyScoreMessage(client)
-        console.log('Finished registering automatic command functions')
+        console.log('2) Finished registering automatic command functions!')
 
     } catch (error) {
         console.log(`There was an error: ${error}`)

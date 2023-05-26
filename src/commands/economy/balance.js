@@ -51,6 +51,6 @@ module.exports = {
                 ? `Your current balance is **$${user.balance.toFixed(2)}**`
                 : `${targetUsername}'s current balance is **$${user.balance.toFixed(2)}**`
         )
-
+        return
     },
 }

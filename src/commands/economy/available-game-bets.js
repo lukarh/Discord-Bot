@@ -116,5 +116,6 @@ module.exports = {
 
         // show list of games to user
         interaction.editReply({ embeds: [betsEmbed] })
+        return
     },
 }

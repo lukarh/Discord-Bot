@@ -29,7 +29,7 @@ module.exports = {
         const processEmbed = new EmbedBuilder()
             .setTitle(`${teamEmojis.NBA} Processed Bets Report :newspaper: | Fetched @ ${timeResults.todaysDate} - ${timeResults.currentTime} :arrows_counterclockwise:`)
             .setDescription(`=====================================================================`)
-            .setColor(`#ffd700`)
+            .setColor(`#FF7F50`)
             .setFooter({ text: 'A (WIP) NBA Discord Bot developed by Lukar.', iconURL: 'https://www.freepnglogos.com/uploads/discord-logo-png/discord-icon-official-arma-koth-host-11.png' })
 
         // Fetch all bet documents from the MongoDB collection
