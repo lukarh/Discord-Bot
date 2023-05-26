@@ -49,7 +49,7 @@ module.exports = {
                 },
                 {
                     name: '/current-bets',
-                    value: 'Look at the current bets being made by all users. [N/A yet].',
+                    value: 'Look at the current bets being made by all users.',
                     inline: true,
                 },
                 {
@@ -65,6 +65,11 @@ module.exports = {
                 {
                     name: '/edit-bet',
                     value: 'Edit a bet you made for a game.',
+                    inline: true,
+                },
+                {
+                    name: '/process-bets',
+                    value: 'Allows the bot to process all current bets if possible [Admin-Only].',
                     inline: true,
                 },
                 {

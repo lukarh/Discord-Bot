@@ -11,7 +11,7 @@ async function getCurrentDateTime() {
     const currentMinute = currentDateTimeStamp.getMinutes().toString().padStart(2, '0')
 
 
-    if ((currentHour < 3) || (currentHour === 3 && currentMinute < 45)) {
+    if ((currentHour < 3) || (currentHour === 3 && currentMinute < 30)) {
         // If the current time is before 3:30 AM, subtract one day from the current date
         currentDate -= 1;
 

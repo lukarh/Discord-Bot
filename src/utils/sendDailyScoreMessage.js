@@ -7,7 +7,7 @@ const { createGameScoreEmbed, addGameColorToEmbed, addGameDetailsToEmbed, addNoG
 
 async function sendDailyScoreMessage (client) {
     // declare a scheduled time for the bot to update the channel at
-    const scheduleTime = '30 4 * * *'
+    const scheduleTime = '30 3 * * *'
 
     console.log('----------------------------------------')
     console.log('Setting up Scheduled Function...')

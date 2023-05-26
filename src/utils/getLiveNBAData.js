@@ -231,7 +231,9 @@ async function getGameDetails(gameID) {
             day: '2-digit',
             year: 'numeric'
         }),
-        gameID: gameInfo.gameId
+        gameID: gameInfo.gameId,
+        homeTeamTricode: gameInfo.homeTeam.teamTricode,
+        awayTeamTricode: gameInfo.awayTeam.teamTricode,
     }
 }
 

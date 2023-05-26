@@ -109,13 +109,13 @@ module.exports = {
         const gameOddsInfo = oddsObjects.find(gameOddsInfo => parseInt(gameOddsInfo.gameId) === gameID)
         if (gameOddsInfo === undefined) {
             interaction.editReply(`Invalid Game ID! Please check the **#nba-live-games** channel and copy & paste the Game ID of the game you want to bet on or type **/available-game-bets**.
-Please also note that you can only bet on **today's games or tomorrow's games** if the game odds are available.`)
+Please also note that you can only bet on **today's games or tomorrow's games** if the game odds are available or the game has not started/ended.`)
             return
         }
 
         // fetch league schedule and current live games to check for current game status
         const liveGameObjects = await getScoreboard(rawJSON=false)
-        const liveGameInfo = liveGameObjects.find(liveGameInfo => liveGameInfo.gameId === gameID)
+        const liveGameInfo = liveGameObjects.find(liveGameInfo => parseInt(liveGameInfo.gameId) === gameID)
         const gameDetails = await getGameDetails(gameID)
         const gameStatus = (liveGameObjects.length !== 0) ? liveGameInfo.gameStatus : gameDetails.gameStatus
 
@@ -150,10 +150,8 @@ Please also note that you can only bet on **today's games or tomorrow's games** 
 
         // check if the team that user is betting on does not exist in the game
         if ((team !== teamResults.homeTeam) && (team !== teamResults.awayTeam)) {
-            interaction.editReply(
-                `The team you bet on, the **${teamFullNames[team]}**, is not involved in the Game [**${gameID}**] you are requesting to bet for.
-The two teams involved in this game are: [**Home Team**: ${teamFullNames[teamResults.homeTeam]} | **Away Team:** ${teamFullNames[teamResults.awayTeam]}]`
-            )
+            interaction.editReply(`The team you bet on, the **${teamFullNames[team]}**, is not involved in the Game [**${gameID}**] you are requesting to bet for.
+The two teams involved in this game are: [**Home Team**: ${teamFullNames[teamResults.homeTeam]} | **Away Team:** ${teamFullNames[teamResults.awayTeam]}]`)
             return
         }
 
@@ -177,17 +175,13 @@ The two teams involved in this game are: [**Home Team**: ${teamFullNames[teamRes
             })
             await newBet.save()
 
-            interaction.editReply(
-                `Your **$${betAmount.toFixed(2)}** bet for the **${teamFullNames[team]}** to *win* against the **${teamFullNames[opponentTeam]}** has been successfully processed! Your **current balance** is now: **$${user.balance.toFixed(2)}**
+            interaction.editReply(`Your **$${betAmount.toFixed(2)}** bet for the **${teamFullNames[team]}** to *win* against the **${teamFullNames[opponentTeam]}** has been successfully processed! Your **current balance** is now: **$${user.balance.toFixed(2)}**
 - If the **${teamFullNames[team]} wins**, your **total possible payout** is: **$${possiblePayout}**, which will net you a profit of **$${(possiblePayout - betAmount).toFixed(2)}**. 
-- If you want to **edit or cancel** your bet, please type **/edit-bet [game-id]** or **/cancel-bet [game-id]**. The **Game ID: ${gameID}**.`
-            )
+- If you want to **edit or cancel** your bet, please type **/edit-bet [game-id]** or **/cancel-bet [game-id]**. The **Game ID: ${gameID}**.`)
             return
         // else, there was an error getting the odds for the bet placed
         } else {
-            interaction.editReply(
-                `An error occurred getting odds for the team you tried to place a bet on. Please contact an Admin to investigate this issue.`
-            )
+            interaction.editReply(`An error occurred getting odds for the team you tried to place a bet on. Please contact an Admin to investigate this issue.`)``
             return
         }
     },

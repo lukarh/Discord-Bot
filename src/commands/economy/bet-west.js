@@ -109,13 +109,13 @@ module.exports = {
         const gameOddsInfo = oddsObjects.find(gameOddsInfo => parseInt(gameOddsInfo.gameId) === gameID)
         if (gameOddsInfo === undefined) {
             interaction.editReply(`Invalid Game ID! Please check the **#nba-live-games** channel and copy & paste the Game ID of the game you want to bet on or type **/available-game-bets**.
-Please also note that you can only bet on **today's games or tomorrow's games** if the game odds are available.`)
+Please also note that you can only bet on **today's games or tomorrow's games** if the game odds are available or the game has not started/ended.`)
             return
         }
 
         // fetch league schedule and current live games to check for current game status
         const liveGameObjects = await getScoreboard(rawJSON=false)
-        const liveGameInfo = liveGameObjects.find(liveGameInfo => liveGameInfo.gameId === gameID)
+        const liveGameInfo = liveGameObjects.find(liveGameInfo => parseInt(liveGameInfo.gameId) === gameID)
         const gameDetails = await getGameDetails(gameID)
         const gameStatus = (liveGameObjects.length !== 0) ? liveGameInfo.gameStatus : gameDetails.gameStatus
 

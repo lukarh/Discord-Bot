@@ -17,13 +17,14 @@ module.exports = {
     callback: async (client, interaction) => {
         await interaction.deferReply()
 
-        timeResults = await getCurrentDateTime()
+        const timeResults = await getCurrentDateTime()
 
         // write command logic here...
         const betsEmbed = new EmbedBuilder()
             .setTitle(`${teamEmojis.NBA} Betting Status of Available NBA Games | Fetched @ ${timeResults.currentTime} :arrows_counterclockwise:`)
             .setDescription(`=====================================================================`)
             .setColor(`#ffd700`)
+            .setFooter({ text: 'A (WIP) NBA Discord Bot developed by Lukar.', iconURL: 'https://www.freepnglogos.com/uploads/discord-logo-png/discord-icon-official-arma-koth-host-11.png' })
 
         // fetch odds for today's games and check if bets are available today
         const availableGameOdds = await getTodaysOdds(rawJSON=false)
@@ -46,10 +47,22 @@ module.exports = {
         // loop through games with odds
         for (const gameInfo of availableGameOdds) {
             // fetch gameID and gameOdds of the game
-            const gameID = gameInfo.gameId
+            const gameID = parseInt(gameInfo.gameId)
+            
+            if (isNaN(gameID)) { 
+                betsEmbed.addFields(
+                    {
+                        name: `:no_entry_sign: There are no more NBA games scheduled to bet on today. :no_entry_sign:`,
+                        value: `=====================================================================`, 
+                    }
+                )
+                interaction.editReply({ embeds: [betsEmbed] })
+                return
+            }
+
             const gameOdds = await getGameOdds(gameInfo)
 
-            const liveGameInfo = liveGameObjects.find(liveGameInfo => liveGameInfo.gameId === gameID)
+            const liveGameInfo = liveGameObjects.find(liveGameInfo => parseInt(liveGameInfo.gameId) === gameID)
             const gameDetails = await getGameDetails(gameID)
             const gameStatus = (liveGameInfo !== undefined) ? liveGameInfo.gameStatus : gameDetails.gameStatus
             const teamResults = await getHomeAndAwayTeam(gameID)

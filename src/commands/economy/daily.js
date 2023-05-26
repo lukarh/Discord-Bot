@@ -40,19 +40,15 @@ module.exports = {
 
             // checks if user already claimed their daily for today
             if (lastDailyDate === currentDate) {
-                interaction.editReply(
-                    'You have already collected your dailies today. Come back tomorrow!'
-                )
+                interaction.editReply('You have already collected your dailies today. Come back tomorrow!')
                 return
             }
         
             user.lastDaily = new Date()
         // else: create a new user in the database
         } else {
-            user = new User({
-            ...query,
-            lastDaily: new Date(),
-            });
+            interaction.editReply(`You don't have a virtual bet profile set up yet. Please type in **/signup** to create a profile.`)
+            return
         }
 
         // adds +100 to their balance and save updated user profile info in database

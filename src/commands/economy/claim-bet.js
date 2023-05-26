@@ -35,9 +35,9 @@ module.exports = {
         let bet = await Bets.findOne(betQuery)
 
         const liveGameObjects = await getScoreboard(rawJSON=false)
-        const liveGameInfo = liveGameObjects.find(liveGameInfo => liveGameInfo.gameId === gameID)
+        const liveGameInfo = liveGameObjects.find(liveGameInfo => parseInt(liveGameInfo.gameId) === gameID)
         const gameDetails = await getGameDetails(gameID)
-        const gameStatus = (liveGameObjects.length !== 0) ? liveGameInfo.gameStatus : gameDetails.gameStatus
+        const gameStatus = ((liveGameObjects.length !== 0) && (liveGameInfo !== undefined)) ? liveGameInfo.gameStatus : gameDetails.gameStatus
 
         if (bet) {
             // find user in users database and update their balance
@@ -61,7 +61,7 @@ module.exports = {
                 const awayScore = liveGameInfo.awayTeam.score
                 const homeScore = liveGameInfo.homeTeam.score
                 const winningTeam = (awayScore > homeScore) ? liveGameInfo.awayTeam.teamTricode : liveGameInfo.homeTeam.teamTricode
-                const oppositeTeam = (liveGameInfo.homeTeam !== bet.betTeam) ? liveGameInfo.homeTeam : liveGameInfo.awayTeam
+                const oppositeTeam = (liveGameInfo.homeTeam.teamTricode !== bet.betTeam) ? liveGameInfo.homeTeam.teamTricode : liveGameInfo.awayTeam.teamTricode
 
                 // check if the user bet on the winning team
                 if (winningTeam === bet.betTeam) {
@@ -72,8 +72,12 @@ module.exports = {
 
                     await user.save()
 
-                    interaction.editReply(`Congratulations! Your bet for the **${teamFullNames[betTeam]}** to win against the **${teamFullNames[oppositeTeam]}** has given you a payout of **$${bet.possiblePayout.toFixed(2)}**.
+                    interaction.editReply(`Congratulations! Your bet for the **${teamFullNames[bet.betTeam]}** to win against the **${teamFullNames[oppositeTeam]}** has given you a payout of **$${bet.possiblePayout.toFixed(2)}**.
 Your current balance is: **$${user.balance.toFixed(2)}**`)
+
+                    // delete the bet from the database
+                    await Bets.deleteMany(betQuery)
+                    return
 
                 // else, the user lost their bet
                 } else {
@@ -82,9 +86,12 @@ Your current balance is: **$${user.balance.toFixed(2)}**`)
 
                     await user.save()
 
-                    interaction.editReply(`Unlucky, try again next time! Your bet for the **${teamFullNames[betTeam]}** to win against the **${teamFullNames[oppositeTeam]}** lost you **$${bet.betAmount.toFixed(2)}**.
+                    interaction.editReply(`Unlucky, try again next time! Your bet for the **${teamFullNames[bet.betTeam]}** to win against the **${teamFullNames[oppositeTeam]}** lost you **$${bet.betAmount.toFixed(2)}**.
 Your current balance is: **$${user.balance.toFixed(2)}**`)
 
+                    // delete the bet from the database
+                    await Bets.deleteMany(betQuery)
+                    return
                 }
             }
         // bet does not exist
@@ -92,10 +99,5 @@ Your current balance is: **$${user.balance.toFixed(2)}**`)
             interaction.editReply(`You **do not have a bet** to be claimed for the following **Game ID: ${gameID}**. If you believe this is incorrect, please contact an Admin.`)
             return
         }
-
-        // delete the bet from the database
-        await Bets.deleteMany(betQuery)
-
-        return
     },
 }

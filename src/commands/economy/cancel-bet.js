@@ -37,9 +37,9 @@ module.exports = {
         if (bet) {
             // fetch league schedule and current live games to check for current game status
             const liveGameObjects = await getScoreboard(rawJSON=false)
-            const liveGameInfo = liveGameObjects.find(liveGameInfo => liveGameInfo.gameId === gameID)
+            const liveGameInfo = liveGameObjects.find(liveGameInfo => parseInt(liveGameInfo.gameId) === gameID)
             const gameDetails = await getGameDetails(gameID)
-            const gameStatus = (liveGameObjects.length !== 0) ? liveGameInfo.gameStatus : gameDetails.gameStatus
+            const gameStatus = ((liveGameObjects.length !== 0) && (liveGameInfo !== undefined)) ? liveGameInfo.gameStatus : gameDetails.gameStatus
 
             if (gameStatus === 2) {
                 interaction.editReply(`This game is currently **in progress**. You **cannot** edit a bet for a game that is live.`)
@@ -60,6 +60,8 @@ module.exports = {
                     guildId: interaction.guild.id,
                 }
                 let user = await User.findOne(userQuery)
+
+                // update user's details
                 user.balance += returnAmount
                 await user.save()
 
@@ -69,7 +71,7 @@ module.exports = {
 
                 return
             }
-
+        // else, inform the user that he does not have a current bet
         } else {
             interaction.editReply(
                 `You **do not have a bet** currently placed for the following **Game ID: ${gameID}**. If you believe this is incorrect, please contact an Admin.`
