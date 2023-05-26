@@ -34,7 +34,7 @@ module.exports = {
                 },
                 {
                     name: '/bets-leaderboard',
-                    value: 'Get the leaderboard of bets. [N/A yet].',
+                    value: 'Get the leaderboard of bets.',
                     inline: true,
                 },
                 {
