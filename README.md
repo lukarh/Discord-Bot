@@ -1,7 +1,7 @@
 
 # NBA Discord Bot
 
-[The NBA Discord Bot](https://github.com/lukarh/NBA-Discord-Bot) is a [Discord](https://discord.com/) [Bot](https://discord.com/developers/docs/intro) developed by me, Lukar! It began as a fun little project for personal use on my own Discord Server since I typically host NBA Watch Parties there and wanted a way for everyone to easily access NBA stats / schedule without having to go to an application or different website. Plus, it's a cool little feature to have on the server for interactivity and engagement purposes, especially with the fake virtual betting feature of the bot (Disclaimer: I am personally not a fan of sports-betting since it gets away from actual basketball discussion, but people find it appealing so it was a fun little feature to work on so that friends/other people can use it for their own amusement). Also, I'm a huge NBA Fan/nerd and I enjoy learning how to work with code and data, so I thought to endeavor on this cool little project. A much more fleshed out and popular version of the NBA Discord Bot that the public uses can be found [here](https://github.com/NBABot-Development-Team/NBABot). File Structure is inspired by [Under Ctrl](https://www.youtube.com/watch?v=JEEcbVjLyr0) and the assets directory was inspired by the [NBA Discord Bot](https://github.com/NBABot-Development-Team/NBABot). 
+[The NBA Discord Bot](https://github.com/lukarh/NBA-Discord-Bot) is a [Discord](https://discord.com/) [Bot](https://discord.com/developers/docs/intro) developed by me, Lukar! It began as a fun little project for personal use on my own Discord Server since we typically host NBA Watch Parties there and wanted a way for everyone to easily access NBA stats / schedule without having to go to an application or different website. Plus, it's a cool little feature to have on the server for interactivity and engagement purposes, especially with the fake virtual betting feature of the bot (Disclaimer: I am personally not a fan of sports-betting since it gets away from actual basketball discussion, but people find it appealing so it was a fun little feature to work on so that friends/other people can use it for their own amusement). Also, I'm a huge NBA Fan/nerd and I enjoy learning how to work with code and data, so I thought to endeavor on this cool little project. A much more fleshed out and popular version of the NBA Discord Bot that the public uses can be found [here](https://github.com/NBABot-Development-Team/NBABot). File Structure is inspired by [Under Ctrl](https://www.youtube.com/watch?v=JEEcbVjLyr0) and the assets directory was inspired by the [NBA Discord Bot](https://github.com/NBABot-Development-Team/NBABot). 
 
 ## Code Development
 - Coding Language: JavaScript
@@ -57,6 +57,10 @@
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/2289516f-1143-4eef-ac0c-e24935d9c626)
 
+  - **/current-bets**: Allows the user to see all the current bets made by all users so far.
+ 
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/8923669e-6af9-4131-bd75-2c8ffb241d2e)
+
   - **/daily**: Allows the user to collect free daily money.
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/e178c21c-bc9d-49cf-874c-8246776f3a88)
@@ -65,6 +69,11 @@
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/9a0086f3-768a-491c-b264-cb4463ab967a)
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/683788a0-d1af-451e-b0fe-b3addecc55b3)
+
+  - **/process-bets**: [Admin-Only] Allows the bot to perform the /claim-bet functionality for all current bets in the database.
+
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/5cee1d83-56fe-4548-8699-699cbdc98f37)
+
   - **/signup**: Allows the user sign-up to create a profile to make virtual bets on games.
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/1681a79d-89b2-4517-8d34-eda3cec33b6f)
@@ -75,6 +84,13 @@
 1.0.1 - Simplified / Reorganized code in utils.
 
 1.1.0 - Introduced new betting feature, claim-bet feature yet to be implemented.
+
+1.1.1 - Implemented a way for the user to claim their payouts on bets. Fixed bugs with bet inputs and gameStatus not registering correctly.
+
+1.2.0 - Introduced new commands: /process-bets, /current-bets, as well as few other admin commands in case bugs arise that messes up command functionalities. Also fixed bugs related to gameStatus not being read correctly which broke a ton of commands
+
+## Bug List
+- To Fix: updateGameMessage, needs to handle multiple message for multiple games
 
 ## Available Local Scripts
 
