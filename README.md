@@ -57,6 +57,10 @@
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/2289516f-1143-4eef-ac0c-e24935d9c626)
 
+  - **/current-bets**: Allows the user to see all the current bets made by all users so far.
+ 
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/8923669e-6af9-4131-bd75-2c8ffb241d2e)
+
   - **/daily**: Allows the user to collect free daily money.
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/e178c21c-bc9d-49cf-874c-8246776f3a88)
@@ -65,6 +69,11 @@
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/9a0086f3-768a-491c-b264-cb4463ab967a)
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/683788a0-d1af-451e-b0fe-b3addecc55b3)
+
+  - **/process-bets**: [Admin-Only] Allows the bot to perform the /claim-bet functionality for all current bets in the database.
+
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/5cee1d83-56fe-4548-8699-699cbdc98f37)
+
   - **/signup**: Allows the user sign-up to create a profile to make virtual bets on games.
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/1681a79d-89b2-4517-8d34-eda3cec33b6f)
