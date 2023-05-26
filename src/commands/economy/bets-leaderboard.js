@@ -49,7 +49,7 @@ module.exports = {
                 // const winLossPercentage = await ((user.wins + user.loss) !== 0) ? (user.wins / (user.wins + user.loss) * 100).toFixed(1) : -
 
                 leaderboardEmbed.addFields({
-                    name: `#${seed}) User: ${username} | :trophy: Win-Loss: (${user.wins}-${user.loss}) - :bar_chart: Win Rate: ${(!isNaN(winLossPercentage) ? winLossPercentage : '-')}% `,
+                    name: `#${seed}) :identification_card: User: ${username} | :trophy: W-L: (${user.wins}-${user.loss}) | :bar_chart: Win Rate: ${(!isNaN(winLossPercentage) ? winLossPercentage : '-')}% `,
                     value: `:credit_card: **Balance:** $${user.balance.toFixed(2)} | :moneybag: **Career Buy-in:** $${user.careerBuyIn.toFixed(2)} | :money_with_wings: **Career Payout:** $${user.careerPayout.toFixed(2)}`,
                 })
                 seed += 1
