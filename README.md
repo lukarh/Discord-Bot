@@ -46,7 +46,7 @@
 
   - **/bet-help**: Shows a list of available game bet commands
 
-![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/f77fbc22-5eab-4d0e-a7d8-26cc2da75a70)
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/df25d64c-48e8-46a8-8ebf-f2b188439e66)
 
   - **/bets-leaderboard**: Shows the bets leaderboard and allows the user to see who has won the most bets and money on the server!
   
