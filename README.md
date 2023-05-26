@@ -96,6 +96,8 @@
 
 1.2.0 - Introduced new commands: /process-bets, /current-bets, as well as few other admin commands in case bugs arise that messes up command functionalities. Also fixed bugs related to gameStatus not being read correctly which broke a ton of commands
 
+1.2.1 - Added /bets-leaderboard functionality and activity status to bot, cleaned up a bit of code too.
+
 ## Bug List
 - To Fix: updateGameMessage, needs to handle multiple message for multiple games
 
