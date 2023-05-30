@@ -51,7 +51,7 @@
 
   - **/bets-leaderboard**: Shows the bets leaderboard and allows the user to see who has won the most bets and money on the server!
   
-![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/fbd9d1d4-7ab6-43d8-bb71-73754a7c0b31)
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/e526c196-1749-48ee-ae68-c93219041b92)
 
   - **/cancel-bet** [game-id]: Cancels a bet a user has made for a specific game if permitted.
 
@@ -80,7 +80,7 @@
 
   - **/process-bets**: [Admin-Only] Allows the bot to perform the /claim-bet functionality for all current bets in the database.
 
-![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/f2e94011-c1a7-46a3-a498-d2243704caab)
+![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/fe5ddb61-eae4-434f-a782-d00ee1be2e34)
 
   - **/signup**: Allows the user sign-up to create a profile to make virtual bets on games.
 
