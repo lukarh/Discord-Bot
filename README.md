@@ -20,7 +20,7 @@
 - **src/handlers/..:** Contains the logic that handles all the events in the events folder
 - **src/utils/..** Contains the logic for various functions that need to be reused throughout the directory
 
-## Current Features on Version 1.0.1
+## Current Features on Version 1.2.1
 
 - Automatic Features
   - sendDailyScoreMessage.js: Sends a msg for every game to the NBA Live Games Channel every 24 hours
