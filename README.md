@@ -82,8 +82,6 @@
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/fe5ddb61-eae4-434f-a782-d00ee1be2e34)
 
-![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/1c81c4f4-3e17-4486-9c77-2ebaadc3120a)
-
   - **/signup**: Allows the user sign-up to create a profile to make virtual bets on games.
 
 ![image](https://github.com/lukarh/NBA-Discord-Bot/assets/65103724/1681a79d-89b2-4517-8d34-eda3cec33b6f)
