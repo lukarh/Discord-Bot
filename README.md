@@ -1,7 +1,7 @@
 
 # NBA Discord Bot
 
-[The NBA Discord Bot](https://github.com/lukarh/Discord-Bot) was developed by me, Lukar! It began as a fun little project for my buddies on a Discord Server since we typically host watch parties there and I wanted a way for some people, who aren't big into basketball but just want to be in the know, to easily access stats / schedule without having to go to an application or different website. It's also a cool little feature to have on the server for interactivity and engagement purposes, especially with the fake virtual betting feature of the bot. The file structure is inspired by [Under Ctrl](https://www.youtube.com/watch?v=JEEcbVjLyr0) and the assets directory was inspired by the [NBA Discord Bot](https://github.com/NBABot-Development-Team/NBABot). 
+[The NBA Discord Bot](https://github.com/lukarh/Discord-Bot) was developed by me, Lukar! It began as a fun little project for my buddies on a Discord Server since we typically host watch parties there and I wanted a way for some people, who aren't big into basketball but just want to be in the know, to easily access stats / schedule without having to go to an application or different website. It's also a cool little feature to have on the server for interactivity and engagement purposes, especially with the fake virtual betting feature of the bot. The file structure is inspired by [Under Ctrl](https://www.youtube.com/watch?v=JEEcbVjLyr0). 
 
 Disclaimer: I am personally not a fan or advocate of sports-betting and only engage in this for fun with friends)
 
